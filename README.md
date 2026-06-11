@@ -108,15 +108,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 # API →  http://localhost:8000
 # Docs → http://localhost:8000/docs
-```
 
-> **First run only:** If your database already has tables from a previous setup, run once to sync Alembic's version tracking:
-> ```bash
-> $env:PYTHONPATH = "C:\path\to\backend"; alembic stamp head   # Windows PowerShell
-> # PYTHONPATH=./backend alembic stamp head                    # Mac/Linux
-> ```
-
----
 
 ### 3. Frontend
 
