@@ -39,24 +39,29 @@ A **multi-tenant RAG (Retrieval-Augmented Generation)** document chat platform. 
 RAG-PLATFORM/
 ├── backend/
 │   ├── alembic/               # DB migration scripts
-│   │   ├── versions/          # Migration files (0001_initial_schema…)
-│   │   └── env.py             # Alembic env (sync psycopg2 engine)
-│   ├── alembic.ini            # Alembic config
+│   │   ├── versions/          # Migration files
+│   │   └── env.py             # Alembic environment configuration
 │   ├── app/
-│   │   ├── api/               # Routers: auth, workspaces, documents, chat, stats, health
-│   │   ├── core/              # config, database, auth helpers, rate_limit
-│   │   ├── models/            # SQLAlchemy ORM models (User, Workspace, Document, QueryLog)
-│   │   └── services/          # embeddings, vector_store, document_processor, rag
-│   ├── .env                   # Backend environment variables (see below)
-│   ├── requirements.txt
-│   └── Dockerfile
+│   │   ├── api/               # FastAPI routers/endpoints
+│   │   ├── core/              # Config, database, security, auth utilities
+│   │   ├── models/            # SQLAlchemy ORM models
+│   │   ├── schemas/           # Pydantic request/response schemas
+│   │   ├── services/          # Business logic, RAG pipeline, embeddings, vector store
+│   │   ├── utils/             # Common helper functions and utilities
+│   │   ├── __init__.py
+│   │   └── main.py            # FastAPI application entry point
+│   ├── tests/                 # Unit and integration tests
+│   ├── .env                   # Environment variables
+│   ├── .gitignore
+│   ├── alembic.ini            # Alembic configuration
+│   └── __init__.py
 ├── frontend/
 │   ├── src/
-│   │   ├── api/               # axios client (reads VITE_API_URL)
-│   │   ├── components/        # Layout, shared UI
-│   │   ├── pages/             # AuthPage, DashboardPage, WorkspacePage, StatsPage
-│   │   └── store/             # Zustand auth store
-│   ├── .env                   # Frontend environment variables (see below)
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── store/
+│   ├── .env
 │   ├── vite.config.js
 │   └── Dockerfile
 └── README.md
